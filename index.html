@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>每日中文學習 - 2026-03-31</title>
+    <title>每日中文學習 - 2026-04-01</title>
     <style>
         body { font-family: 'PingFang HK', 'Microsoft JhengHei', sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
         .container { background-color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
@@ -13,76 +13,77 @@
         .pinyin { color: #e67e22; font-weight: 500; font-size: 1.1em; margin: 5px 0; }
         .definition { margin: 10px 0; font-size: 1.05em; }
         .example { color: #16a085; font-size: 0.95em; padding: 10px; background: #f0fdf4; border-radius: 8px; border-left: 3px solid #27ae60; }
-        
         .quiz-section { margin-top: 40px; padding: 25px; background: #fff; border-radius: 12px; border: 2px solid #3498db; }
         .question { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px dashed #ddd; }
         .options { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
-        .option-btn { background-color: #f8f9fa; color: #333; border: 1px solid #ddd; padding: 10px 15px; border-radius: 8px; cursor: pointer; text-align: left; transition: all 0.2s; }
+        .option-btn { background-color: #f8f9fa; color: #333; border: 1px solid #ddd; padding: 12px 15px; border-radius: 8px; cursor: pointer; text-align: left; transition: all 0.2s; font-size: 16px; }
         .option-btn:hover { background-color: #e9ecef; border-color: #3498db; }
         .option-btn.correct { background-color: #d4edda; border-color: #28a745; color: #155724; }
         .option-btn.wrong { background-color: #f8d7da; border-color: #dc3545; color: #721c24; }
-        
-        #result-summary { display: none; margin-top: 20px; padding: 20px; text-align: center; background: #f1f9ff; border-radius: 10px; font-weight: bold; }
+        #result-summary { display: none; margin-top: 20px; padding: 20px; text-align: center; background: #f1f9ff; border-radius: 10px; font-weight: bold; font-size: 1.2em; }
         .footer { text-align: center; margin-top: 40px; font-size: 0.9em; color: #bdc3c7; }
         .audio-btn { background: #3498db; color: white; border: none; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>📚 每日中文學習 (2026-03-31)</h1>
+        <h1>📚 每日中文學習 (2026-04-01)</h1>
         
         <div id="words-container">
-            <!-- 詞語卡片保持不變 -->
             <div class="word-card">
-                <div class="word-title">1. 嶄露頭角 <button class="audio-btn" onclick="speak('嶄露頭角')">🔊</button></div>
-                <div class="pinyin">zhǎn lù tóu jiǎo</div>
-                <div class="definition"><strong>釋義：</strong> 比喻突出地顯露才能。</div>
-                <div class="example"><strong>例句：</strong> 他年紀輕輕就在鋼琴大賽中<strong>嶄露頭角</strong>。</div>
+                <div class="word-title">1. 出奇制勝 <button class="audio-btn" onclick="speak('出奇制勝')">🔊</button></div>
+                <div class="pinyin">chū qí zhì shèng</div>
+                <div class="definition"><strong>釋義：</strong> 用奇兵或奇計輕取勝利。</div>
+                <div class="example"><strong>例句：</strong> 在這場比賽中，教練運用靈活的戰術，帶領球隊<strong>出奇制勝</strong>。</div>
             </div>
+            
             <div class="word-card">
-                <div class="word-title">2. 循序漸進 <button class="audio-btn" onclick="speak('循序漸進')">🔊</button></div>
-                <div class="pinyin">xún xù jiàn jìn</div>
-                <div class="definition"><strong>釋義：</strong> 按照一定的順序逐漸深入或提高。</div>
-                <div class="example"><strong>例句：</strong> 學習知識不能急於求成，必須<strong>循序漸進</strong>。</div>
+                <div class="word-title">2. 循循善誘 <button class="audio-btn" onclick="speak('循循善誘')">🔊</button></div>
+                <div class="pinyin">xún xún shàn yòu</div>
+                <div class="definition"><strong>釋義：</strong> 善於有步驟地引導別人學習。</div>
+                <div class="example"><strong>例句：</strong> 老師<strong>循循善誘</strong>地引導學生思考，激發了他們的學習興趣。</div>
             </div>
+            
             <div class="word-card">
-                <div class="word-title">3. 豁然開朗 <button class="audio-btn" onclick="speak('豁然開朗')">🔊</button></div>
-                <div class="pinyin">huò rán kāi lǎng</div>
-                <div class="definition"><strong>釋義：</strong> 比喻突然明白或悟出道理。</div>
-                <div class="example"><strong>例句：</strong> 聽了老師的講解，我心中的疑惑頓時<strong>豁然開朗</strong>。</div>
+                <div class="word-title">3. 蔚然成風 <button class="audio-btn" onclick="speak('蔚然成風')">🔊</button></div>
+                <div class="pinyin">wèi rán chéng fēng</div>
+                <div class="definition"><strong>釋義：</strong> 指一件事情逐漸發展、盛行，形成一種良好的風氣。</div>
+                <div class="example"><strong>例句：</strong> 如今，大家互相幫助、文明禮讓的行為已在社區裡<strong>蔚然成風</strong>。</div>
             </div>
+            
             <div class="word-card">
-                <div class="word-title">4. 孜孜不倦 <button class="audio-btn" onclick="speak('孜孜不倦')">🔊</button></div>
-                <div class="pinyin">zī zī bù juàn</div>
-                <div class="definition"><strong>釋義：</strong> 指工作或學習勤奮刻苦，不知疲倦。</div>
-                <div class="example"><strong>例句：</strong> 他<strong>孜孜不倦</strong>地學習，終於取得了優異成績。</div>
+                <div class="word-title">4. 妙筆生花 <button class="audio-btn" onclick="speak('妙筆生花')">🔊</button></div>
+                <div class="pinyin">miào bǐ shēng huā</div>
+                <div class="definition"><strong>釋義：</strong> 比喻傑出的寫作才能。</div>
+                <div class="example"><strong>例句：</strong> 這位作家<strong>妙筆生花</strong>，把筆下的景物描寫得栩栩如生。</div>
             </div>
+            
             <div class="word-card">
-                <div class="word-title">5. 聚沙成塔 <button class="audio-btn" onclick="speak('聚沙成塔')">🔊</button></div>
-                <div class="pinyin">jù shā chéng tǎ</div>
-                <div class="definition"><strong>釋義：</strong> 比喻積少成多。</div>
-                <div class="example"><strong>例句：</strong> 只要我們每日儲蓄一點，就能<strong>聚沙成塔</strong>。</div>
+                <div class="word-title">5. 意氣風發 <button class="audio-btn" onclick="speak('意氣風發')">🔊</button></div>
+                <div class="pinyin">yì qì fēng fā</div>
+                <div class="definition"><strong>釋義：</strong> 形容精神振奮，氣概昂揚。</div>
+                <div class="example"><strong>例句：</strong> 他們正值青春年華，個個都表現得<strong>意氣風發</strong>。</div>
             </div>
         </div>
 
         <div class="quiz-section">
-            <h3>✍️ 每日五題選擇題</h3>
+            <h3>✍️ 每日挑戰 (五題選擇題)</h3>
             <div id="quiz-container"></div>
             <div id="result-summary"></div>
         </div>
 
         <div class="footer">
-            TARS 教育專家任務 | 互動測驗版 2.0
+            TARS 教育專家任務 | 持續學習，精益求精
         </div>
     </div>
 
     <script>
         const questions = [
-            { q: "形容「突出地顯露才能」的詞語是？", options: ["循序漸進", "嶄露頭角", "豁然開朗", "聚沙成塔"], a: 1 },
-            { q: "「學習知識必須由淺入深，（ ）。」空格應填入？", options: ["孜孜不倦", "聚沙成塔", "循序漸進", "嶄露頭角"], a: 2 },
-            { q: "當你「突然明白道理」時，可以用哪個詞形容？", options: ["豁然開朗", "孜孜不倦", "嶄露頭角", "循序漸進"], a: 0 },
-            { q: "形容一個人「勤奮刻苦，不知疲倦」？", options: ["聚沙成塔", "豁然開朗", "孜孜不倦", "嶄露頭角"], a: 2 },
-            { q: "「積少成多」可以用哪個詞語來比喻？", options: ["嶄露頭角", "循序漸進", "聚沙成塔", "豁然開朗"], a: 2 }
+            { q: "「用奇兵或奇計輕取勝利」是指哪個詞語？", options: ["循循善誘", "出奇制勝", "妙筆生花", "蔚然成風"], a: 1 },
+            { q: "形容老師「善於有步驟地引導學生」可以用？", options: ["意氣風發", "出奇制勝", "循循善誘", "蔚然成風"], a: 2 },
+            { q: "「誠信經營的理念在商界已經（ ）。」空格填入？", options: ["蔚然成風", "妙筆生花", "意氣風發", "循循善誘"], a: 0 },
+            { q: "形容一個人「寫作才能傑出，描寫生動」？", options: ["出奇制勝", "意氣風發", "循循善誘", "妙筆生花"], a: 3 },
+            { q: "形容「精神振奮，氣概昂揚」的樣子？", options: ["意氣風發", "蔚然成風", "妙筆生花", "出奇制勝"], a: 0 }
         ];
 
         let score = 0;
@@ -111,10 +112,10 @@
         }
 
         function handleAnswer(qIdx, optIdx, btn) {
-            const qButtons = btn.parentElement.querySelectorAll('.option-btn');
-            if (btn.parentElement.dataset.answered) return;
+            const parent = btn.parentElement;
+            if (parent.dataset.answered) return;
             
-            btn.parentElement.dataset.answered = "true";
+            parent.dataset.answered = "true";
             answered++;
             
             if (optIdx === questions[qIdx].a) {
@@ -122,18 +123,14 @@
                 score++;
             } else {
                 btn.classList.add('wrong');
-                qButtons[questions[qIdx].a].classList.add('correct');
+                parent.querySelectorAll('.option-btn')[questions[qIdx].a].classList.add('correct');
             }
             
             if (answered === questions.length) {
-                showResult();
+                const resultDiv = document.getElementById('result-summary');
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = `測驗結束！得分：\${score} / \${questions.length}<br>\${score === 5 ? '🌈 太出色了，全對！' : '📚 加油，再接再厲！'}`;
             }
-        }
-
-        function showResult() {
-            const resultDiv = document.getElementById('result-summary');
-            resultDiv.style.display = 'block';
-            resultDiv.innerHTML = `測驗結束！你的得分是：${score} / ${questions.length}<br>${score === 5 ? '🎉 非常完美！' : '💪 繼續努力！'}`;
         }
 
         function speak(text) {
