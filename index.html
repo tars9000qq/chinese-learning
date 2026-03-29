@@ -13,9 +13,16 @@
         .pinyin { color: #e67e22; font-weight: 500; font-size: 1.1em; margin: 5px 0; }
         .definition { margin: 10px 0; font-size: 1.05em; }
         .example { color: #16a085; font-size: 0.95em; padding: 10px; background: #f0fdf4; border-radius: 8px; border-left: 3px solid #27ae60; }
-        .quiz-section { margin-top: 40px; padding: 25px; background: #ebf5fb; border-radius: 12px; border: 1px solid #d6eaf8; }
-        button { background-color: #3498db; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; transition: all 0.3s; }
-        button:hover { background-color: #21618c; transform: translateY(-2px); }
+        
+        .quiz-section { margin-top: 40px; padding: 25px; background: #fff; border-radius: 12px; border: 2px solid #3498db; }
+        .question { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px dashed #ddd; }
+        .options { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+        .option-btn { background-color: #f8f9fa; color: #333; border: 1px solid #ddd; padding: 10px 15px; border-radius: 8px; cursor: pointer; text-align: left; transition: all 0.2s; }
+        .option-btn:hover { background-color: #e9ecef; border-color: #3498db; }
+        .option-btn.correct { background-color: #d4edda; border-color: #28a745; color: #155724; }
+        .option-btn.wrong { background-color: #f8d7da; border-color: #dc3545; color: #721c24; }
+        
+        #result-summary { display: none; margin-top: 20px; padding: 20px; text-align: center; background: #f1f9ff; border-radius: 10px; font-weight: bold; }
         .footer { text-align: center; margin-top: 40px; font-size: 0.9em; color: #bdc3c7; }
         .audio-btn { background: #3498db; color: white; border: none; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; }
     </style>
@@ -25,57 +32,110 @@
         <h1>📚 每日中文學習 (2026-03-31)</h1>
         
         <div id="words-container">
+            <!-- 詞語卡片保持不變 -->
             <div class="word-card">
                 <div class="word-title">1. 嶄露頭角 <button class="audio-btn" onclick="speak('嶄露頭角')">🔊</button></div>
                 <div class="pinyin">zhǎn lù tóu jiǎo</div>
                 <div class="definition"><strong>釋義：</strong> 比喻突出地顯露才能。</div>
-                <div class="example"><strong>例句：</strong> 他年紀輕輕就在鋼琴大賽中<strong>嶄露頭角</strong>，引起了音樂界的關注。</div>
+                <div class="example"><strong>例句：</strong> 他年紀輕輕就在鋼琴大賽中<strong>嶄露頭角</strong>。</div>
             </div>
-            
             <div class="word-card">
                 <div class="word-title">2. 循序漸進 <button class="audio-btn" onclick="speak('循序漸進')">🔊</button></div>
                 <div class="pinyin">xún xù jiàn jìn</div>
-                <div class="definition"><strong>釋義：</strong> 按照一定的順序或步驟逐漸深入或提高。</div>
-                <div class="example"><strong>例句：</strong> 學習知識不能急於求成，必須<strong>循序漸進</strong>地積累。</div>
+                <div class="definition"><strong>釋義：</strong> 按照一定的順序逐漸深入或提高。</div>
+                <div class="example"><strong>例句：</strong> 學習知識不能急於求成，必須<strong>循序漸進</strong>。</div>
             </div>
-            
             <div class="word-card">
                 <div class="word-title">3. 豁然開朗 <button class="audio-btn" onclick="speak('豁然開朗')">🔊</button></div>
                 <div class="pinyin">huò rán kāi lǎng</div>
-                <div class="definition"><strong>釋義：</strong> 形容由狹隘幽暗突然變得寬闊明亮。也比喻突然明白或悟出道理。</div>
+                <div class="definition"><strong>釋義：</strong> 比喻突然明白或悟出道理。</div>
                 <div class="example"><strong>例句：</strong> 聽了老師的講解，我心中的疑惑頓時<strong>豁然開朗</strong>。</div>
             </div>
-            
             <div class="word-card">
                 <div class="word-title">4. 孜孜不倦 <button class="audio-btn" onclick="speak('孜孜不倦')">🔊</button></div>
                 <div class="pinyin">zī zī bù juàn</div>
                 <div class="definition"><strong>釋義：</strong> 指工作或學習勤奮刻苦，不知疲倦。</div>
-                <div class="example"><strong>例句：</strong> 為了完成實驗，陳教授<strong>孜孜不倦</strong>地工作了整整一個星期。</div>
+                <div class="example"><strong>例句：</strong> 他<strong>孜孜不倦</strong>地學習，終於取得了優異成績。</div>
             </div>
-            
             <div class="word-card">
                 <div class="word-title">5. 聚沙成塔 <button class="audio-btn" onclick="speak('聚沙成塔')">🔊</button></div>
                 <div class="pinyin">jù shā chéng tǎ</div>
-                <div class="definition"><strong>釋義：</strong> 聚細沙成寶塔。比喻積少成多。</div>
-                <div class="example"><strong>例句：</strong> 每天節省一塊錢，<strong>聚沙成塔</strong>，一年下來也是一筆不小的數目。</div>
+                <div class="definition"><strong>釋義：</strong> 比喻積少成多。</div>
+                <div class="example"><strong>例句：</strong> 只要我們每日儲蓄一點，就能<strong>聚沙成塔</strong>。</div>
             </div>
         </div>
 
         <div class="quiz-section">
-            <h3>✍️ 每日挑戰</h3>
-            <p>請將正確的詞語填入空格：</p>
-            <p>「這項宏偉的工程是成千上萬名工人（ ）地努力，最後（ ）而建成的。」</p>
-            <p style="font-size: 0.9em; color: #666;">（提示：空格內依序填入兩個適合的詞語）</p>
-            <button onclick="checkAnswer()">提交答案</button>
-            <p id="feedback" style="margin-top: 15px; font-weight: bold;"></p>
+            <h3>✍️ 每日五題選擇題</h3>
+            <div id="quiz-container"></div>
+            <div id="result-summary"></div>
         </div>
 
         <div class="footer">
-            TARS 教育專家任務 | 持續學習，聚沙成塔
+            TARS 教育專家任務 | 互動測驗版 2.0
         </div>
     </div>
 
     <script>
+        const questions = [
+            { q: "形容「突出地顯露才能」的詞語是？", options: ["循序漸進", "嶄露頭角", "豁然開朗", "聚沙成塔"], a: 1 },
+            { q: "「學習知識必須由淺入深，（ ）。」空格應填入？", options: ["孜孜不倦", "聚沙成塔", "循序漸進", "嶄露頭角"], a: 2 },
+            { q: "當你「突然明白道理」時，可以用哪個詞形容？", options: ["豁然開朗", "孜孜不倦", "嶄露頭角", "循序漸進"], a: 0 },
+            { q: "形容一個人「勤奮刻苦，不知疲倦」？", options: ["聚沙成塔", "豁然開朗", "孜孜不倦", "嶄露頭角"], a: 2 },
+            { q: "「積少成多」可以用哪個詞語來比喻？", options: ["嶄露頭角", "循序漸進", "聚沙成塔", "豁然開朗"], a: 2 }
+        ];
+
+        let score = 0;
+        let answered = 0;
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            questions.forEach((question, index) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = 'question';
+                qDiv.innerHTML = `<p><strong>第 ${index + 1} 題：</strong>${question.q}</p>`;
+                const optionsDiv = document.createElement('div');
+                optionsDiv.className = 'options';
+                
+                question.options.forEach((opt, optIdx) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'option-btn';
+                    btn.innerText = opt;
+                    btn.onclick = () => handleAnswer(index, optIdx, btn);
+                    optionsDiv.appendChild(btn);
+                });
+                
+                qDiv.appendChild(optionsDiv);
+                container.appendChild(qDiv);
+            });
+        }
+
+        function handleAnswer(qIdx, optIdx, btn) {
+            const qButtons = btn.parentElement.querySelectorAll('.option-btn');
+            if (btn.parentElement.dataset.answered) return;
+            
+            btn.parentElement.dataset.answered = "true";
+            answered++;
+            
+            if (optIdx === questions[qIdx].a) {
+                btn.classList.add('correct');
+                score++;
+            } else {
+                btn.classList.add('wrong');
+                qButtons[questions[qIdx].a].classList.add('correct');
+            }
+            
+            if (answered === questions.length) {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const resultDiv = document.getElementById('result-summary');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `測驗結束！你的得分是：${score} / ${questions.length}<br>${score === 5 ? '🎉 非常完美！' : '💪 繼續努力！'}`;
+        }
+
         function speak(text) {
             const msg = new SpeechSynthesisUtterance();
             msg.text = text;
@@ -83,18 +143,7 @@
             window.speechSynthesis.speak(msg);
         }
 
-        function checkAnswer() {
-            const answer1 = prompt("第一個空格填入：");
-            const answer2 = prompt("第二個空格填入：");
-            const feedback = document.getElementById('feedback');
-            if (answer1 === '孜孜不倦' && answer2 === '聚沙成塔') {
-                feedback.innerHTML = "🌟 完美！你對詞語的運用非常準確。";
-                feedback.style.color = "#27ae60";
-            } else {
-                feedback.innerHTML = "💡 再想一想！建議參考詞義，順序為：孜孜不倦、聚沙成塔。";
-                feedback.style.color = "#e74c3c";
-            }
-        }
+        renderQuiz();
     </script>
 </body>
 </html>
