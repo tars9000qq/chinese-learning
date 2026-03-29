@@ -1,239 +1,100 @@
 <!DOCTYPE html>
-<html lang="zh-HK">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TARS 每日中文五詞訓練</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日中文學習 - 2026-03-30</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
-        body { font-family: 'Noto Sans TC', sans-serif; -webkit-tap-highlight-color: transparent; overflow-x: hidden; }
-        .slide-enter { animation: slideIn 0.3s ease-out forwards; }
-        @keyframes slideIn { from { transform: translateX(50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-        .progress-transition { transition: width 0.3s ease-in-out; }
+        body { font-family: 'PingFang HK', 'Microsoft JhengHei', sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; }
+        .container { background-color: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; text-align: center; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .word-card { margin-bottom: 25px; padding: 15px; border-left: 5px solid #3498db; background-color: #ecf0f1; border-radius: 0 8px 8px 0; }
+        .word-title { font-size: 24px; font-weight: bold; color: #e67e22; margin-bottom: 5px; }
+        .pinyin { color: #7f8c8d; font-style: italic; margin-bottom: 10px; }
+        .definition { margin-bottom: 10px; }
+        .example { color: #27ae60; font-size: 0.9em; }
+        .quiz-section { margin-top: 40px; padding-top: 20px; border-top: 2px dashed #ddd; }
+        button { background-color: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 10px; transition: background 0.3s; }
+        button:hover { background-color: #2980b9; }
+        .footer { text-align: center; margin-top: 30px; font-size: 0.8em; color: #95a5a6; }
+        .audio-btn { background: none; border: none; color: #3498db; cursor: pointer; font-size: 20px; padding: 0 10px; }
     </style>
 </head>
-<body class="bg-slate-50 min-h-screen">
+<body>
+    <div class="container">
+        <h1>📅 每日中文學習 (2026-03-30)</h1>
+        
+        <div id="words-container">
+            <div class="word-card">
+                <div class="word-title">1. 砥礪 <button class="audio-btn" onclick="speak('砥礪')">🔊</button></div>
+                <div class="pinyin">dǐ lì</div>
+                <div class="definition"><strong>釋義：</strong> 原指磨刀石，引申為磨練、勉勵。</div>
+                <div class="example"><strong>例句：</strong> 他們在艱苦的環境中互相<strong>砥礪</strong>，共同成長。</div>
+            </div>
+            
+            <div class="word-card">
+                <div class="word-title">2. 睿智 <button class="audio-btn" onclick="speak('睿智')">🔊</button></div>
+                <div class="pinyin">ruì zhì</div>
+                <div class="definition"><strong>釋義：</strong> 聰明、有遠見。</div>
+                <div class="example"><strong>例句：</strong> 爺爺用他<strong>睿智</strong>的眼光看透了事情的本質。</div>
+            </div>
+            
+            <div class="word-card">
+                <div class="word-title">3. 浩瀚 <button class="audio-btn" onclick="speak('浩瀚')">🔊</button></div>
+                <div class="pinyin">hào hàn</div>
+                <div class="definition"><strong>釋義：</strong> 水勢盛大，也形容廣大繁多。</div>
+                <div class="example"><strong>例句：</strong> <strong>浩瀚</strong>的宇宙中隱藏著無數的秘密。</div>
+            </div>
+            
+            <div class="word-card">
+                <div class="word-title">4. 鍥而不捨 <button class="audio-btn" onclick="speak('鍥而不捨')">🔊</button></div>
+                <div class="pinyin">qiè ér bù shě</div>
+                <div class="definition"><strong>釋義：</strong> 雕刻一件東西，一直刻下去不放手。比喻做事有恆心，堅持不懈。</div>
+                <div class="example"><strong>例句：</strong> 只要有<strong>鍥而不捨</strong>的精神，任何困難都能克服。</div>
+            </div>
+            
+            <div class="word-card">
+                <div class="word-title">5. 蔚為大觀 <button class="audio-btn" onclick="speak('蔚為大觀')">🔊</button></div>
+                <div class="pinyin">wèi wéi dà guān</div>
+                <div class="definition"><strong>釋義：</strong> 形容事物豐富多彩，匯聚成盛大的景象。</div>
+                <div class="example"><strong>例句：</strong> 這裡的石林千姿百態，<strong>蔚為大觀</strong>。</div>
+            </div>
+        </div>
 
-<div id="app"></div>
+        <div class="quiz-section">
+            <h3>📝 每日小測驗</h3>
+            <p>請將正確的詞語填入空格：</p>
+            <p>「這座圖書館收藏的書籍種類繁多，簡直是（ ）。」</p>
+            <button onclick="checkAnswer()">提交答案</button>
+            <p id="feedback"></p>
+        </div>
 
-<script>
-    const WORDS = [
-        { id: 1, word: '遼闊', pinyin: 'liáo kuò', jyutping: 'liu4 fut3', meaning: '非常廣闊，無邊無際。', example: '我們站在山頂，俯瞰著下面**遼闊**的大地。', level: '小三至小四' },
-        { id: 2, word: '清澈', pinyin: 'qīng chè', jyutping: 'cing1 caat3', meaning: '水清潔透明。', example: '這條小溪的水非常**清澈**，可以看見底下的砂石。', level: '小三至小四' },
-        { id: 3, word: '蜿蜒', pinyin: 'wān yán', jyutping: 'jyun1 jin4', meaning: '形容道路、河流或蛇類爬行時彎彎曲曲延伸的樣子。', example: '長城像一條巨龍，**蜿蜒**在崇山峻嶺之間。', level: '小三至小四' },
-        { id: 4, word: '堅持', pinyin: 'jiān chí', jyutping: 'gin1 ci4', meaning: '堅決保持，不放棄。', example: '只要**堅持**努力，你一定能實現夢想。', level: '小三至小四' },
-        { id: 5, word: '慷慨', pinyin: 'kāng kǎi', jyutping: 'hong2 koi2', meaning: '大方，不吝嗇。', example: '他非常**慷慨**，經常捐錢幫助有需要的人。', level: '小三至小四' }
-    ];
+        <div class="footer">
+            TARS 教育專家任務 | 專為 Dom 的兒子設計
+        </div>
+    </div>
 
-    const QUIZ = [
-        { id: 1, question: '草原一眼望不到邊，真是（ ）。', options: ['清澈', '遼闊', '蜿蜒'], answer: 1, relatedWord: '遼闊' },
-        { id: 2, question: '這條（ ）的山路一直通往山頂。', options: ['堅持', '慷慨', '蜿蜒'], answer: 2, relatedWord: '蜿蜒' },
-        { id: 3, question: '湖水（ ）見底，魚兒在水中游來游去。', options: ['清澈', '遼闊', '堅持'], answer: 0, relatedWord: '清澈' }
-    ];
-
-    let state = {
-        phase: 'splash',
-        currentWord: 0,
-        currentQuiz: 0,
-        quizAnswers: [],
-        selectedOption: null,
-        showResult: false,
-        startTime: new Date(),
-        endTime: null
-    };
-
-    function updateState(newState) {
-        state = { ...state, ...newState };
-        render();
-    }
-
-    function handleSpeak(text) {
-        window.speechSynthesis.cancel();
-        const msg = new SpeechSynthesisUtterance(text);
-        msg.lang = 'zh-HK';
-        msg.rate = 0.8;
-        window.speechSynthesis.speak(msg);
-    }
-
-    function handleSendReport() {
-        const today = new Date();
-        const dateStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
-        const dayNames = ['日', '一', '二', '三', '四', '五', '六'];
-        const dayOfWeek = `星期${dayNames[today.getDay()]}`;
-        const correctCount = state.quizAnswers.filter(a => a.correct).length;
-        const score = Math.round((correctCount / QUIZ.length) * 100);
-        const incorrectWords = state.quizAnswers.filter(a => !a.correct).map(a => a.relatedWord);
-        const finishTime = state.endTime ? `${String(state.endTime.getHours()).padStart(2, '0')}:${String(state.endTime.getMinutes()).padStart(2, '0')}` : '';
-
-        const reportText = `📊 每日中文訓練完成報告\n日期：${dateStr} ${dayOfWeek}\n完成時間：${finishTime} HKT\n正確率：${score}% (${correctCount}/${QUIZ.length})\n已學詞彙：${WORDS.map(w => w.word).join('、')}${incorrectWords.length > 0 ? '\n需複習：' + incorrectWords.join('、') : '\n🌟 全部掌握！'}`;
-
-        if (navigator.share) {
-            navigator.share({ text: reportText }).catch(() => copyToClipboard(reportText));
-        } else {
-            copyToClipboard(reportText);
+    <script>
+        function speak(text) {
+            const msg = new SpeechSynthesisUtterance();
+            msg.text = text;
+            msg.lang = 'zh-HK';
+            window.speechSynthesis.speak(msg);
         }
-    }
 
-    function copyToClipboard(text) {
-        const el = document.createElement('textarea');
-        el.value = text;
-        document.body.appendChild(el);
-        el.select();
-        document.execCommand('copy');
-        document.body.removeChild(el);
-        alert('報告內容已複製，請貼上發送！');
-    }
-
-    function render() {
-        const app = document.getElementById('app');
-        const today = new Date();
-        const dateStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
-        const dayNames = ['日', '一', '二', '三', '四', '五', '六'];
-        const dayOfWeek = `星期${dayNames[today.getDay()]}`;
-
-        if (state.phase === 'splash') {
-            app.innerHTML = `
-                <div class="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center p-4 text-center">
-                    <div class="bg-white rounded-3xl shadow-2xl p-8 max-w-sm w-full slide-enter">
-                        <div class="text-6xl mb-4">🧪</div>
-                        <h1 class="text-2xl font-bold text-gray-800 mb-2">測試運作：第一課</h1>
-                        <p class="text-sm text-gray-500 mb-1">${dateStr} ${dayOfWeek}</p>
-                        <p class="text-xs text-purple-500 font-medium mb-6">環境與基礎品質詞彙</p>
-                        <button onclick="updateState({phase: 'learning'})" class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-4 rounded-2xl text-lg shadow-lg active:scale-95 transition-transform">
-                            開始測試 🚀
-                        </button>
-                    </div>
-                </div>`;
-        } else if (state.phase === 'learning') {
-            const word = WORDS[state.currentWord];
-            const progress = ((state.currentWord + 1) / WORDS.length) * 100;
-            app.innerHTML = `
-                <div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col p-4">
-                    <div class="max-w-sm w-full mx-auto mb-4">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-xs font-bold text-indigo-600">📖 學習階段</span>
-                            <span class="text-xs font-bold text-gray-500">${state.currentWord + 1} / ${WORDS.length}</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                            <div class="bg-indigo-500 h-full progress-transition" style="width: ${progress}%"></div>
-                        </div>
-                    </div>
-                    <div class="flex-1 flex items-center justify-center">
-                        <div class="bg-white rounded-3xl shadow-xl p-6 max-w-sm w-full slide-enter">
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full font-medium">${word.level}</span>
-                                <button onclick="handleSpeak('${word.word}')" class="flex items-center gap-1 bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-medium active:scale-95 transition-transform">
-                                    <i class="fas fa-volume-up"></i> 發音
-                                </button>
-                            </div>
-                            <h2 class="text-5xl font-bold text-center text-gray-800 my-6 tracking-widest">${word.word}</h2>
-                            <div class="text-center mb-5 text-gray-400 text-sm">
-                                <p>普通話: ${word.pinyin} | 粵語: ${word.jyutping}</p>
-                            </div>
-                            <div class="bg-blue-50 rounded-2xl p-4 mb-4 text-left">
-                                <p class="text-xs font-bold text-blue-600 mb-1 uppercase">📖 詞義</p>
-                                <p class="text-sm text-gray-700 leading-relaxed">${word.meaning}</p>
-                            </div>
-                            <div class="bg-green-50 rounded-2xl p-4 text-left">
-                                <p class="text-xs font-bold text-green-600 mb-1 uppercase">📝 造句</p>
-                                <p class="text-sm text-gray-700 leading-relaxed italic">${word.example}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="max-w-sm w-full mx-auto mt-4 flex gap-3 pb-4">
-                        <button onclick="updateState({currentWord: state.currentWord - 1})" ${state.currentWord === 0 ? 'disabled class="flex-1 py-4 rounded-2xl font-bold bg-gray-200 text-gray-400"' : 'class="flex-1 py-4 rounded-2xl font-bold bg-white text-indigo-600 shadow-md active:scale-95"'}>上一個</button>
-                        <button onclick="${state.currentWord < WORDS.length - 1 ? `updateState({currentWord: state.currentWord + 1})` : `updateState({phase: 'quiz-intro'})`}" class="flex-1 bg-indigo-600 text-white py-4 rounded-2xl font-bold shadow-lg active:scale-95 transition-transform">
-                            ${state.currentWord < WORDS.length - 1 ? '下一個' : '開始測驗 📝'}
-                        </button>
-                    </div>
-                </div>`;
-        } else if (state.phase === 'quiz-intro') {
-            app.innerHTML = `
-                <div class="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100 flex items-center justify-center p-4 text-center">
-                    <div class="bg-white rounded-3xl shadow-2xl p-8 max-w-sm w-full slide-enter">
-                        <div class="text-6xl mb-4">📝</div>
-                        <h2 class="text-2xl font-bold text-gray-800 mb-2">學習完成！</h2>
-                        <p class="text-sm text-gray-500 mb-6">來挑戰一下測試題吧。</p>
-                        <button onclick="updateState({phase: 'quiz', currentQuiz: 0, quizAnswers: [], selectedOption: null, showResult: false})" class="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold py-4 rounded-2xl text-lg shadow-lg active:scale-95 transition-transform">
-                            開始 3 題挑戰 💪
-                        </button>
-                    </div>
-                </div>`;
-        } else if (state.phase === 'quiz') {
-            const q = QUIZ[state.currentQuiz];
-            const progress = ((state.currentQuiz + 1) / QUIZ.length) * 100;
-            app.innerHTML = `
-                <div class="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100 flex flex-col p-4">
-                    <div class="max-w-sm w-full mx-auto mb-4">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-xs font-bold text-orange-600">📝 挑戰階段</span>
-                            <span class="text-xs font-bold text-gray-500">${state.currentQuiz + 1} / ${QUIZ.length}</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                            <div class="bg-orange-500 h-full progress-transition" style="width: ${progress}%"></div>
-                        </div>
-                    </div>
-                    <div class="flex-1 flex items-center justify-center">
-                        <div class="bg-white rounded-3xl shadow-xl p-6 max-w-sm w-full slide-enter">
-                            <p class="text-base font-bold text-gray-800 mb-6">${q.question}</p>
-                            <div class="space-y-3">
-                                ${q.options.map((opt, i) => {
-                                    let cls = "border-slate-100";
-                                    if (state.showResult) {
-                                        if (i === q.answer) cls = "bg-green-50 border-green-500 text-green-700";
-                                        else if (i === state.selectedOption) cls = "bg-red-50 border-red-400 text-red-600";
-                                        else cls = "opacity-40";
-                                    }
-                                    return `<button onclick="handleSelectOption(${i})" ${state.showResult ? 'disabled' : ''} class="w-full py-4 px-5 rounded-2xl text-left font-bold border-2 transition-all active:scale-95 ${cls}">${String.fromCharCode(65+i)}. ${opt}</button>`;
-                                }).join('')}
-                            </div>
-                        </div>
-                    </div>
-                    ${state.showResult ? `<div class="max-w-sm w-full mx-auto mt-4 pb-4"><button onclick="handleNextQuiz()" class="w-full bg-orange-500 text-white py-4 rounded-2xl font-bold shadow-lg">下一題</button></div>` : '<div class="h-20"></div>'}
-                </div>`;
-        } else if (state.phase === 'report') {
-            const correctCount = state.quizAnswers.filter(a => a.correct).length;
-            const score = Math.round((correctCount / QUIZ.length) * 100);
-            const incorrectWords = state.quizAnswers.filter(a => !a.correct).map(a => a.relatedWord);
-            app.innerHTML = `
-                <div class="min-h-screen bg-emerald-50 flex items-center justify-center p-4 text-center">
-                    <div class="bg-white rounded-3xl shadow-2xl p-6 max-w-sm w-full slide-enter">
-                        <div class="text-6xl mb-2">${score >= 80 ? '🏆' : '💪'}</div>
-                        <h2 class="text-2xl font-bold text-gray-800 mb-4">測試完成！</h2>
-                        <div class="rounded-2xl p-5 mb-4 ${score >= 80 ? 'bg-emerald-50' : 'bg-amber-50'}">
-                            <p class="text-5xl font-bold" style="color: ${score >= 80 ? '#059669' : '#d97706'}">${score}%</p>
-                            <p class="text-xs text-gray-600">正確率 (${correctCount}/${QUIZ.length})</p>
-                        </div>
-                        <div class="bg-blue-50 rounded-2xl p-4 mb-4 text-left text-xs">
-                            <p class="font-bold text-blue-600 mb-2 uppercase">📖 今日詞彙</p>
-                            <div class="flex flex-wrap gap-2">${WORDS.map(w => `<span class="px-2 py-1 rounded-full bg-white border border-blue-100">${w.word}</span>`).join('')}</div>
-                        </div>
-                        <div class="bg-gray-50 rounded-2xl p-4 mb-5 border border-dashed border-gray-300 text-[11px] text-gray-400 text-left">
-                            <p>日期：${dateStr} | 正確率：${score}% | 完成測試</p>
-                        </div>
-                        <div class="flex gap-3">
-                            <button onclick="location.reload()" class="flex-1 bg-gray-100 py-4 rounded-2xl font-bold text-sm">重學</button>
-                            <button onclick="handleSendReport()" class="flex-1 bg-emerald-500 text-white py-4 rounded-2xl font-bold text-sm">發送報告</button>
-                        </div>
-                    </div>
-                </div>`;
+        function checkAnswer() {
+            const answer = prompt("請輸入答案：");
+            const feedback = document.getElementById('feedback');
+            if (answer === '蔚為大觀') {
+                feedback.innerHTML = "✅ 太棒了！回答正確。";
+                feedback.style.color = "green";
+                // 這裡可以發送完成信號
+            } else {
+                feedback.innerHTML = "❌ 再試一次吧！正確答案是：蔚為大觀";
+                feedback.style.color = "red";
+                // 這裡可以記錄錯誤單詞
+            }
         }
-    }
-
-    window.handleSelectOption = function(idx) {
-        if (state.showResult) return;
-        const isCorrect = idx === QUIZ[state.currentQuiz].answer;
-        updateState({ selectedOption: idx, showResult: true, quizAnswers: [...state.quizAnswers, { correct: isCorrect, relatedWord: QUIZ[state.currentQuiz].relatedWord }] });
-    }
-
-    window.handleNextQuiz = function() {
-        if (state.currentQuiz < QUIZ.length - 1) updateState({ currentQuiz: state.currentQuiz + 1, selectedOption: null, showResult: false });
-        else updateState({ phase: 'report', endTime: new Date() });
-    }
-
-    render();
-</script>
+    </script>
 </body>
 </html>
