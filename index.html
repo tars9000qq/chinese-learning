@@ -1,146 +1,54 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>每日中文學習 - 2026-04-03</title>
-    <style>
-        body { font-family: 'PingFang HK', 'Microsoft JhengHei', sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
-        .container { background-color: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        h1 { color: #2c3e50; text-align: center; border-bottom: 3px solid #3498db; padding-bottom: 15px; margin-bottom: 30px; }
-        .word-card { margin-bottom: 25px; padding: 20px; border-left: 6px solid #3498db; background-color: #fff; border-radius: 0 12px 12px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .word-title { font-size: 26px; font-weight: bold; color: #2980b9; display: flex; align-items: center; justify-content: space-between; }
-        .pinyin { color: #e67e22; font-weight: 500; font-size: 1.1em; margin: 5px 0; }
-        .definition { margin: 10px 0; font-size: 1.05em; }
-        .example { color: #16a085; font-size: 0.95em; padding: 10px; background: #f0fdf4; border-radius: 8px; border-left: 3px solid #27ae60; }
-        .quiz-section { margin-top: 40px; padding: 25px; background: #fff; border-radius: 12px; border: 2px solid #3498db; }
-        .question { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px dashed #ddd; }
-        .options { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
-        .option-btn { background-color: #f8f9fa; color: #333; border: 1px solid #ddd; padding: 12px 15px; border-radius: 8px; cursor: pointer; text-align: left; transition: all 0.2s; font-size: 16px; }
-        .option-btn:hover { background-color: #e9ecef; border-color: #3498db; }
-        .option-btn.correct { background-color: #d4edda; border-color: #28a745; color: #155724; }
-        .option-btn.wrong { background-color: #f8d7da; border-color: #dc3545; color: #721c24; }
-        #result-summary { display: none; margin-top: 20px; padding: 20px; text-align: center; background: #f1f9ff; border-radius: 10px; font-weight: bold; font-size: 1.2em; }
-        .footer { text-align: center; margin-top: 40px; font-size: 0.9em; color: #bdc3c7; }
-        .audio-btn { background: #3498db; color: white; border: none; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>📚 每日中文學習 (2026-04-03)</h1>
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>每日中文學習 - 2026-04-06</title>
+        <style>
+            body { font-family: 'Microsoft JhengHei', sans-serif; padding: 20px; line-height: 1.6; }
+            .word-card { border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 10px; background-color: #f9f9f9; }
+            .word { font-size: 24px; color: #333; font-weight: bold; }
+            .pinyin { color: #666; }
+            .meaning { color: #0056b3; }
+        </style>
+    </head>
+    <body>
+        <h1>每日中文學習 (2026-04-06)</h1>
+        <p>Dom 的兒子，今天也要努力學習喔！</p>
+        <div id="words">
+    
+            <div class="word-card">
+                <div class="word">言歸正傳</div>
+                <div class="pinyin"></div>
+                <div class="meaning">Tone 2/4 mix-up</div>
+            </div>
         
-        <div id="words-container">
             <div class="word-card">
-                <div class="word-title">1. 不約而同 <button class="audio-btn" onclick="speak('不約而同')">🔊</button></div>
-                <div class="pinyin">bù yuē ér tóng</div>
-                <div class="definition"><strong>釋義：</strong> 事先沒有約定，彼此的言論或行動卻完全一致。</div>
-                <div class="example"><strong>例句：</strong> 聽完精彩的演出，觀眾們<strong>不約而同</strong>地起立鼓掌。</div>
+                <div class="word">誠實</div>
+                <div class="pinyin">chéng shí</div>
+                <div class="meaning">Honest</div>
             </div>
-            
+        
             <div class="word-card">
-                <div class="word-title">2. 名列前茅 <button class="audio-btn" onclick="speak('名列前茅')">🔊</button></div>
-                <div class="pinyin">míng liè qián máo</div>
-                <div class="definition"><strong>釋義：</strong> 比喻名次排在前面。</div>
-                <div class="example"><strong>例句：</strong> 他在這次數學競賽中表現優異，<strong>名列前茅</strong>。</div>
+                <div class="word">謙遜</div>
+                <div class="pinyin">qiān xùn</div>
+                <div class="meaning">Humble</div>
             </div>
-            
+        
             <div class="word-card">
-                <div class="word-title">3. 同舟共濟 <button class="audio-btn" onclick="speak('同舟共濟')">🔊</button></div>
-                <div class="pinyin">tóng zhōu gòng jì</div>
-                <div class="definition"><strong>釋義：</strong> 比喻在困難的環境中同心協力，克服困難。</div>
-                <div class="example"><strong>例句：</strong> 在這場危機中，我們必須<strong>同舟共濟</strong>，才能共渡難關。</div>
+                <div class="word">自信</div>
+                <div class="pinyin">zì xìn</div>
+                <div class="meaning">Self-confident</div>
             </div>
-            
+        
             <div class="word-card">
-                <div class="word-title">4. 言歸正傳 <button class="audio-btn" onclick="speak('言歸正傳')">🔊</button></div>
-                <div class="pinyin">yán guī zhèng zhuàn</div>
-                <div class="definition"><strong>釋義：</strong> 把話頭轉回到原來的主題上。</div>
-                <div class="example"><strong>例句：</strong> 剛才扯遠了，現在我們<strong>言歸正傳</strong>，討論一下計劃。</div>
+                <div class="word">勇敢</div>
+                <div class="pinyin">yǒng gǎn</div>
+                <div class="meaning">Brave</div>
             </div>
-            
-            <div class="word-card">
-                <div class="word-title">5. 大功告成 <button class="audio-btn" onclick="speak('大功告成')">🔊</button></div>
-                <div class="pinyin">dà gōng gào chéng</div>
-                <div class="definition"><strong>釋義：</strong> 指巨大的工程或重要的事情順利完成。</div>
-                <div class="example"><strong>例句：</strong> 經過三年的努力，這座大橋終於<strong>大功告成</strong>。</div>
-            </div>
+        
         </div>
-
-        <div class="quiz-section">
-            <h3>✍️ 每日挑戰 (五題選擇題)</h3>
-            <div id="quiz-container"></div>
-            <div id="result-summary"></div>
-        </div>
-
-        <div class="footer">
-            TARS 教育專家任務 | 持續學習，精益求精
-        </div>
-    </div>
-
-    <script>
-        const questions = [
-            { q: "「事先沒有約定，行動卻一致」是哪個詞？", options: ["不約而同", "名列前茅", "同舟共濟", "言歸正傳"], a: 0 },
-            { q: "形容成績在名次最前列可以用？", options: ["言歸正傳", "大功告成", "名列前茅", "不約而同"], a: 2 },
-            { q: "「大家在困境中（ ），最終戰勝了災害。」", options: ["名列前茅", "不約而同", "同舟共濟", "言歸正傳"], a: 2 },
-            { q: "「閒話少說，我們還是（ ），談談正事。」", options: ["大功告成", "言歸正傳", "不約而同", "同舟共濟"], a: 1 },
-            { q: "形容「重要的事情順利完成」？", options: ["名列前茅", "同舟共濟", "大功告成", "言歸正傳"], a: 2 }
-        ];
-
-        let score = 0;
-        let answered = 0;
-
-        function renderQuiz() {
-            const container = document.getElementById('quiz-container');
-            questions.forEach((question, index) => {
-                const qDiv = document.createElement('div');
-                qDiv.className = 'question';
-                qDiv.innerHTML = `<p><strong>第 \${index + 1} 題：</strong>\${question.q}</p>`;
-                const optionsDiv = document.createElement('div');
-                optionsDiv.className = 'options';
-                
-                question.options.forEach((opt, optIdx) => {
-                    const btn = document.createElement('button');
-                    btn.className = 'option-btn';
-                    btn.innerText = opt;
-                    btn.onclick = () => handleAnswer(index, optIdx, btn);
-                    optionsDiv.appendChild(btn);
-                });
-                
-                qDiv.appendChild(optionsDiv);
-                container.appendChild(qDiv);
-            });
-        }
-
-        function handleAnswer(qIdx, optIdx, btn) {
-            const parent = btn.parentElement;
-            if (parent.dataset.answered) return;
-            
-            parent.dataset.answered = "true";
-            answered++;
-            
-            if (optIdx === questions[qIdx].a) {
-                btn.classList.add('correct');
-                score++;
-            } else {
-                btn.classList.add('wrong');
-                parent.querySelectorAll('.option-btn')[questions[qIdx].a].classList.add('correct');
-            }
-            
-            if (answered === questions.length) {
-                const resultDiv = document.getElementById('result-summary');
-                resultDiv.style.display = 'block';
-                resultDiv.innerHTML = `測驗結束！得分：\${score} / \${questions.length}<br>\${score === 5 ? '🌈 太出色了，全對！' : '📚 加油，再接再厲！'}`;
-            }
-        }
-
-        function speak(text) {
-            const msg = new SpeechSynthesisUtterance();
-            msg.text = text;
-            msg.lang = 'zh-HK';
-            window.speechSynthesis.speak(msg);
-        }
-
-        renderQuiz();
-    </script>
-</body>
-</html>
+    </body>
+    </html>
+    
